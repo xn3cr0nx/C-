@@ -19,7 +19,6 @@ void genera(int v[], int n)
     {
         v[i]=rand();
     }
-
 }
 
 //Insertion Sort
@@ -37,11 +36,8 @@ void insertionSort(int v[], int n)
         }
     v[j+1]=var;
     }
-    /*for(int i=0;i<n;i++)
-    {
-        cout << v[i] << endl;
-    }*/
 }
+
 //Selection Sort
 void selectionSort(int v[], int n)
 {
@@ -63,6 +59,7 @@ void selectionSort(int v[], int n)
         v[posmin] = app;
     }
 }
+
 //Bubble Sort
 void bubbleSort(int v[], int n)
 {
@@ -84,6 +81,7 @@ void bubbleSort(int v[], int n)
         }
     }
 }
+
 //Quick Sort
 void quickSort(int v[], int left, int right)
 {
@@ -116,6 +114,8 @@ void quickSort(int *v, int n)
     cout << "QUICK SORT";
     quickSort(v, 0, n-1);
 }
+
+//MY SORT
 void mySort(int v[], int n)
 {
     cout << "MY SORT";
@@ -135,7 +135,6 @@ int (sortAlgorithm) (void (*f)(int[],int), int v[],int n)
     cout << "Creazione Struttura" << endl;
     genera(v,n);
     cout << "Ordinamento Struttura: ";
-    //pause(1000000);
     clock_t start = clock();
     f(v,n);
     clock_t time = clock();
@@ -143,8 +142,6 @@ int (sortAlgorithm) (void (*f)(int[],int), int v[],int n)
     cout << endl << "Struttura Ordinata" << endl;
     cout << "Tempo impiegato: " << diff << " secondi" << endl << endl;
 }
-
-
 
 
 int main()
