@@ -12,15 +12,6 @@ void pause(int mseconds)
     while(goal>clock());
 }
 
-
-void genera(int v[], int n)
-{
-    for(int i=0;i<n;i++)
-    {
-        v[i]=rand();
-    }
-}
-
 //Insertion Sort
 void insertionSort(int v[], int n)
 {
