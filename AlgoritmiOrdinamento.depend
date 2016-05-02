@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1461940614 source:/home/patrick/Documenti/Code/AlgoritmiOrdinamento/main.cpp
+	<iostream>
+	<stdlib.h>
+	<time.h>
+
