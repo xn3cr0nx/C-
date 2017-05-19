@@ -106,8 +106,7 @@ class Graph {
     // tornare ad esplorare la frontiera del vertice da cui era partito
     void DFS(int start) {
 	  VertexState *state = new VertexState[vertexCount];
-	  for (int i = 0; i < vertexCount; i++)
-	    state[i] = White;
+	  for (int i = 0; i < vertexCount; i++) state[i] = White;
     runDFS(start, state);
 	  delete [] state;
   	}

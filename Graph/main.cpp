@@ -1,70 +1,64 @@
 #include <iostream>
 #include <stdlib.h>
-#include <ctime>
 
 using namespace std;
 
 #include "AdjacencyMatrix.h"
+#include "AdjacencyList.h"
+#include "Timer.h"
 
 
-class Timer
-{
-public:
-    Timer() { clock_gettime(CLOCK_REALTIME, &beg_); }
-
-    double elapsed() {
-        clock_gettime(CLOCK_REALTIME, &end_);
-        return end_.tv_sec - beg_.tv_sec +
-            (end_.tv_nsec - beg_.tv_nsec) / 1000000000.;
-    }
-
-    void reset() { clock_gettime(CLOCK_REALTIME, &beg_); }
-
-private:
-    timespec beg_, end_;
-};
+void decorateGraph(int vertexes, Graph* g=NULL, GraphList* gl=NULL) {
+  int src, dest = 0;
+  int edges = rand() % vertexes*vertexes + 1;
+  for(int i=0; i < edges; i++) {
+    src = rand() % vertexes;
+    dest = rand() % vertexes;
+    if(g) g->addDirectEdge(src, dest);
+    if(gl) gl->addDirectEdge(src, dest);
+  }
+}
 
 
 
 
 int main() {
-  // Graph graph(6);
-  // // Composizione del grafo
-  // graph.addDirectEdge(0,1);
-  // graph.addDirectEdge(0,2);
-  // graph.addDirectEdge(2,4);
-  // graph.addDirectEdge(3,5);
-  // graph.addDirectEdge(4,3);
-  // graph.addDirectEdge(3,2);
-  // graph.printAdjacencyMatrix();
+  srand(time(NULL));
+  int vertexes = rand() % 10 + 5;
+  Graph graph(vertexes);
+  GraphList graphl(vertexes);
+  decorateGraph(vertexes, &graph, &graphl);
 
 
-  Graph graph(6);
-  // Composizione del grafo
-  graph.addDirectEdge(0,1);
-  graph.addDirectEdge(0,2);
-  graph.addDirectEdge(0,5);
-  graph.addDirectEdge(1,2);
-  graph.addDirectEdge(1,1);
-  graph.addDirectEdge(2,4);
-  graph.addDirectEdge(3,4);
-  graph.addDirectEdge(3,5);
-  graph.addDirectEdge(4,3);
-  graph.addDirectEdge(3,2);
-  graph.addDirectEdge(4,5);
+  cout << "Adjacency Matrix Graph Implementation" << endl;
   graph.printAdjacencyMatrix();
-
-
-  cout << "Adjacency Matrix Graph Implementation" << endl << endl;
   cout << "Breadth-First Search Algorithm" << endl;
   Timer tmr;
   graph.BFS(0);
   double t = tmr.elapsed();
-  cout << "Breadth-First Alghoritm Time: " << t << endl;
+  cout << "Breadth-First Algorithm Time: " << t << endl;
 
   cout << "Depth-First Search Algorithm" << endl;
   tmr.reset();
   graph.DFS(0);
   t = tmr.elapsed();
-  cout << "Depth-First Alghoritm Time: " << t << endl;
+  cout << "Depth-First Algorithm Time: " << t << endl << endl << endl << endl;
+
+
+
+  cout << "Adjacency List Graph Implementation" << endl;
+  graphl.printAdjacencyList();
+  cout << endl <<"Breadth-First Search Algorithm" << endl;
+  tmr.reset();
+  graphl.BFS(0);
+  t = tmr.elapsed();
+  cout << "Breadth-First Algorithm Time: " << t << endl;
+
+  cout << "Depth-First Search Algorithm" << endl;
+  tmr.reset();
+  graph.DFS(0);
+  t = tmr.elapsed();
+  cout << "Depth-First Algorithm Time: " << t << endl;
+
+
 }
