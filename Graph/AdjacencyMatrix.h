@@ -112,14 +112,12 @@ class Graph {
   	}
   	void runDFS(int u, VertexState state[]) {
   	  state[u] = Grey;
-      // cout << u << " è in fase di esplorazione, il suo stato è grigio" << endl;
       for (int v = 0; v < vertexCount; v++) {
         if (checkEdge(u, v) && state[v] == White) {
           runDFS(v, state);
         }
       }
   	  state[u] = Black;
-      // cout << u << " è stato completamente esplorato il suo stato è nero" << endl << endl << endl;
   	}
 
 
@@ -140,22 +138,15 @@ class Graph {
       delete [] state;
     }
     int runBFS(int u, VertexState state[], TQueue* Q) {
-      // base case, check if queue is empty
       if(queue_is_empty(Q)) return 0;
-      // cout << u << " sta venendo espolorato sulla frontiera, il suo stato è grigio" << endl;
       for(int v = 0; v < vertexCount; v++) {
         if(checkEdge(u,v) && state[v] == White) {
           state[v] = Grey;
-          // cout << v << " è stato trovato nella frontiera di " << u << endl;
           queue_add(Q, v);
         }
       }
       state[u] = Black;
-      // cout << "tutta la frontiera di " << u << " è stata esplorato, il suo stato è nero" << endl;
       queue_remove(Q);
-      // cout << "back della queue: " << Q->back << endl;
-      // cout << "front della queue: " << Q->front << endl << endl << endl;
-      // if(Q->back == Q-> front) cout << u << " è l'ultimo elemento" << endl;
       for(int j = Q->a[Q->front]; Q->front != Q->back; j = Q->a[j+1]) {
         runBFS(j, state, Q);
       }
