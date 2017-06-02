@@ -1,0 +1,70 @@
+Adjacency Matrix Graph Implementation
+adjacencyMatrix[0]: 0x22d30e0   0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1
+adjacencyMatrix[1]: 0x22d3100   0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0
+adjacencyMatrix[2]: 0x22d3120   1 0 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1
+adjacencyMatrix[3]: 0x22d3140   0 0 0 1 0 1 0 1 0 1 0 1 1 0 0 0 0 0 0 0 1
+adjacencyMatrix[4]: 0x22d3160   0 1 0 1 0 0 1 0 1 0 0 0 0 1 0 0 0 1 0 0 0
+adjacencyMatrix[5]: 0x22d3180   0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0
+adjacencyMatrix[6]: 0x22d31a0   0 0 1 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0
+adjacencyMatrix[7]: 0x22d31c0   0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0
+adjacencyMatrix[8]: 0x22d31e0   0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0
+adjacencyMatrix[9]: 0x22d3200   0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1
+adjacencyMatrix[10]: 0x22d3220  0 0 0 0 1 0 0 1 0 1 1 0 1 0 0 1 0 0 0 0 1
+adjacencyMatrix[11]: 0x22d3240  0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0
+adjacencyMatrix[12]: 0x22d3260  0 1 0 0 0 0 0 0 0 1 0 1 1 0 1 0 0 1 0 0 0
+adjacencyMatrix[13]: 0x22d3280  0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0
+adjacencyMatrix[14]: 0x22d32a0  1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0
+adjacencyMatrix[15]: 0x22d32c0  0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0
+adjacencyMatrix[16]: 0x22d32e0  0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 0 0
+adjacencyMatrix[17]: 0x22d3300  0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0
+adjacencyMatrix[18]: 0x22d3320  1 1 0 1 0 0 1 0 0 1 1 0 0 0 0 0 0 0 1 0 0
+adjacencyMatrix[19]: 0x22d3340  0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0
+adjacencyMatrix[20]: 0x22d3360  0 1 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 0 1
+Breadth-First Algorithm Time: 1.1e-05
+Depth-First Algorithm Time: 7.023e-06
+
+Adjacency List Graph Implementation
+Adjacency list of vertex 0
+ head -> 19-> 20-> 10
+Adjacency list of vertex 1
+ head -> 14-> 5-> 13
+Adjacency list of vertex 2
+ head -> 15-> 0-> 20-> 4-> 7
+Adjacency list of vertex 3
+ head -> 7-> 12-> 20-> 3-> 5-> 9-> 11
+Adjacency list of vertex 4
+ head -> 1-> 17-> 3-> 6-> 13-> 8
+Adjacency list of vertex 5
+ head -> 11-> 6
+Adjacency list of vertex 6
+ head -> 2-> 13-> 7-> 3
+Adjacency list of vertex 7
+ head -> 3-> 18-> 10-> 11
+Adjacency list of vertex 8
+ head -> 12-> 1
+Adjacency list of vertex 9
+ head -> 6-> 20-> 10-> 1
+Adjacency list of vertex 10
+ head -> 9-> 4-> 7-> 20-> 10-> 12-> 15
+Adjacency list of vertex 11
+ head -> 16-> 10-> 17
+Adjacency list of vertex 12
+ head -> 1-> 14-> 17-> 12-> 9-> 11
+Adjacency list of vertex 13
+ head -> 9-> 2-> 10
+Adjacency list of vertex 14
+ head -> 3-> 19-> 12-> 1-> 13-> 0
+Adjacency list of vertex 15
+ head -> 4-> 19-> 5-> 3-> 2-> 18
+Adjacency list of vertex 16
+ head -> 1-> 10-> 17-> 7
+Adjacency list of vertex 17
+ head -> 18-> 1-> 8-> 5-> 15
+Adjacency list of vertex 18
+ head -> 1-> 0-> 9-> 6-> 10-> 3-> 18
+Adjacency list of vertex 19
+ head -> 7-> 13
+Adjacency list of vertex 20
+ head -> 14-> 13-> 1-> 20-> 9-> 10
+Breadth-First Algorithm Time: 3.117e-06
+Depth-First Algorithm Time: 5.781e-06

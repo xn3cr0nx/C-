@@ -1,0 +1,49 @@
+Adjacency Matrix Graph Implementation
+adjacencyMatrix[0]: 0xc530b0   0 0 1 0 0 0 0 0 0 1 1 0 0 0
+adjacencyMatrix[1]: 0xc530d0   0 0 0 0 0 0 0 1 0 1 0 1 0 0
+adjacencyMatrix[2]: 0xc530f0   1 1 0 0 0 1 0 0 0 1 0 1 0 0
+adjacencyMatrix[3]: 0xc53110   0 1 0 0 1 0 0 0 1 0 0 0 1 0
+adjacencyMatrix[4]: 0xc53130   0 0 0 1 0 0 0 0 0 0 0 0 1 0
+adjacencyMatrix[5]: 0xc53150   0 1 0 0 0 1 0 0 0 0 1 0 1 1
+adjacencyMatrix[6]: 0xc53170   0 0 0 1 0 0 0 0 0 1 0 0 0 1
+adjacencyMatrix[7]: 0xc53190   0 0 0 0 1 0 0 1 1 0 1 0 1 0
+adjacencyMatrix[8]: 0xc531b0   0 0 0 1 0 0 0 0 0 0 0 0 0 0
+adjacencyMatrix[9]: 0xc531d0   0 1 0 0 1 0 0 0 0 0 1 0 0 1
+adjacencyMatrix[10]: 0xc531f0  1 0 0 0 1 0 0 0 0 0 0 0 0 0
+adjacencyMatrix[11]: 0xc53210  0 0 0 0 1 0 1 1 0 0 1 0 0 0
+adjacencyMatrix[12]: 0xc53230  0 1 1 1 0 0 0 0 0 0 0 0 1 1
+adjacencyMatrix[13]: 0xc53250  0 0 0 1 0 0 0 1 0 0 0 0 1 1
+Breadth-First Algorithm Time: 7.668e-06
+Depth-First Algorithm Time: 4.274e-06
+
+Adjacency List Graph Implementation
+Adjacency list of vertex 0
+ head -> 10-> 2-> 9
+Adjacency list of vertex 1
+ head -> 11-> 7-> 9
+Adjacency list of vertex 2
+ head -> 5-> 9-> 11-> 1-> 0
+Adjacency list of vertex 3
+ head -> 12-> 1-> 8-> 4
+Adjacency list of vertex 4
+ head -> 12-> 3
+Adjacency list of vertex 5
+ head -> 1-> 13-> 5-> 10-> 12
+Adjacency list of vertex 6
+ head -> 3-> 13-> 9
+Adjacency list of vertex 7
+ head -> 4-> 7-> 8-> 10-> 12
+Adjacency list of vertex 8
+ head -> 3
+Adjacency list of vertex 9
+ head -> 10-> 13-> 4-> 1
+Adjacency list of vertex 10
+ head -> 4-> 0
+Adjacency list of vertex 11
+ head -> 10-> 6-> 4-> 7
+Adjacency list of vertex 12
+ head -> 13-> 1-> 3-> 2-> 12
+Adjacency list of vertex 13
+ head -> 13-> 12-> 7-> 3
+Breadth-First Algorithm Time: 2.369e-06
+Depth-First Algorithm Time: 2.547e-06

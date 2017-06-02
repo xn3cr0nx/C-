@@ -24,7 +24,7 @@ void decorateGraph(int vertexes, Graph* g=NULL, GraphList* gl=NULL) {
 
 int main() {
   srand(time(NULL));
-  int vertexes = rand() % 10 + 5;
+  int vertexes = rand() % 10 + 100;
   Graph graph(vertexes);
   GraphList graphl(vertexes);
   decorateGraph(vertexes, &graph, &graphl);
@@ -59,6 +59,4 @@ int main() {
   graph.DFS(0);
   t = tmr.elapsed();
   cout << "Depth-First Algorithm Time: " << t << endl;
-
-
 }
