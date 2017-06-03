@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <assert.h>
 
 
 struct SNode {
@@ -33,13 +34,14 @@ TList list_create() {
 }
 
 
-void list_destroy(TList l) {
+TList list_destroy(TList l) {
 	TNode *succ;
 	while(!l) {
 		succ = l->link;
 		node_destroy(l);
 		l = succ;
 	}
+	return NULL;
 }
 
 
@@ -156,6 +158,52 @@ TList list_delete_recursive(TList list, int info) {
 }
 
 
+//indirizzamento chiuso
+
+struct SInfo {
+	int key;
+	int value;
+};
+typedef struct SInfo TInfo;
+
+struct SHashTable {
+	int n_bucket;
+	TList *bucket;
+};
+typedef struct SHashTable THashTable;
+
+
+THashTable *hashtable_create(int buckets) {
+	THashTable *p = (THashTable*)malloc(sizeof(THashTable));
+	assert(!p && buckets > 0);
+	p->n_bucket = buckets;
+	p->bucket = (TList*)malloc(sizeof(TList)*buckets);
+	assert(!p->bucket);
+	for(int i=0; i<buckets; i++) p->bucket[i] = list_create();
+	return p;
+}
+
+void hashtable_destroy(THashTable *p) {
+	for(int i=0; i<p->n_bucket; i++) p->bucket[i] = list_destroy(p->bucket[i]);
+	free(p->bucket);
+	p->n_bucket = 0;
+	p->bucket = NULL;
+}
+
+int hash(int m) {
+	return 10%m;
+}
+
+TNode * hashtable_search(THashTable *p, TInfo info) {
+	return list_search(p->bucket[hash(info.key)], info.value);
+}
+
+
+void hashtable_insert(THashTable *p, TInfo info) {
+	p->bucket[hash(info.key)] = list_insert(p->bucket[hash(info.key)], info);
+}
+
+
 int main() {
-	
+
 }
